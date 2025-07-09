@@ -27,7 +27,6 @@ Requisitos:
 
 */
 
-
 // Función pura para calcular el porcentaje de tareas completadas
 
 const calcularPorcentajeCompletadas = (completadas, total) => {
