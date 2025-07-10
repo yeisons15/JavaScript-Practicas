@@ -98,3 +98,22 @@ const masFrutas=[...frutas, "mango"]
 console.log(masFrutas)
 
 
+/*
+🟠 Ejercicio 6: Usar filter para crear un nuevo array
+Dado el array:
+
+let edades = [12, 18, 21, 16, 30];
+Crea un nuevo array mayoresDeEdad que contenga solo los números mayores o iguales a 18.
+*/
+
+console.log("--------------------Ejercicio # 6 -------------------------")
+let edades = [12, 18, 21, 16, 30];
+
+const mayoresDeEdad = edades.filter(function(edad){
+    return edad >= 18;
+
+})
+
+
+console.log("Edades originales:", edades);
+console.log("Mayores de edad:", mayoresDeEdad);
