@@ -66,3 +66,35 @@ numeros.push(40)
 console.log(numeros)
 numeros.pop()
 console.log(numeros)
+
+
+/*
+🟡 Ejercicio 4: Modificar elementos
+Crea un array de 3 nombres.
+Cambia el segundo nombre por "Carlos".
+Imprime el array actualizado.
+*/
+
+console.log("--------------------Ejercicio # 4 -------------------------")
+
+const names = ["Yeison", "Amanda", "Gaby"]
+console.log("Impresion de array names " + names)
+names[1]="Carlos"
+console.log(names)
+
+
+/*
+🔄 Nivel 3 – Inmutabilidad (sin modificar el original)
+🟠 Ejercicio 5: Crear un nuevo array con un elemento adicional
+Crea un array frutas = ["Manzana", "Pera"].
+
+Crea un nuevo array masFrutas que incluya las frutas originales + "Mango" sin modificar el array original.
+
+*/ 
+
+console.log("--------------------Ejercicio # 5 -------------------------")
+const frutas = ["Manzana", "Pera"]
+const masFrutas=[...frutas, "mango"]
+console.log(masFrutas)
+
+
