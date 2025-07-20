@@ -12,33 +12,40 @@ Se rechaza (reject) si no hay productos disponibles.
 
 // Función que retorna una promesa
 
-function procesarCompra (){
-    return new Promise ((resolve, reject) => {
+function procesarCompra(productoDisponible) {
+    return new Promise((resolve, reject) => {
         console.log("Procesando tu compra ...");
 
         setTimeout(() => {
-            if(productoDisponible){
-            resolve("✅ Compra exitosa: tu producto será enviado pronto.");
-        } else {
-            reject("❌ Lo sentimos, el producto está agotado.");
-        }
-    }, 2000); //Aquí estamos simulando una espera de 2 segundos
-
+            if (productoDisponible) {
+                resolve("✅ Compra exitosa: tu producto será enviado pronto.");
+            } else {
+                reject("❌ Lo sentimos, el producto está agotado.");
+            }
+        }, 2000); // Simula una espera de 2 segundos
     });
-
 }
 
 // Aquí usamos la la promesa
 
-procesarCompra(true)
+procesarCompra(false)  // Simula que el producto NO está disponible
     .then((mensajeExito) => {
-         console.log("✔️ THEN:", mensajeExito); // Promesa resuelta
+        console.log("✔️ THEN:", mensajeExito); // Promesa resuelta
     })
-
     .catch((mensajeError) => {
         console.error("🚫 CATCH:", mensajeError); // Promesa rechazada
+    });
+
+
+procesarCompra(true)  // Simula que el producto SÍ está disponible
+    .then((mensajeExito) => {
+        console.log("✔️ THEN:", mensajeExito);
     })
+    .catch((mensajeError) => {
+        console.error("🚫 CATCH:", mensajeError);
+    });
 
 
-procesarCompra(false); // ← Simula que no hay producto
+procesarCompra(true); // ← Simula que no hay producto
+
 
